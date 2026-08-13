@@ -448,8 +448,8 @@ function MainMenu:drawVersion()
 
     if not TARGET_MOD then
         local ver_string = self.ver_string
-        if self.state == "TITLE" and Kristal.Version.major == 0 then
-            ver_string = ver_string .. " (Unstable)"
+        if (self.state == "TITLE" or self.state == "ABOUT") and Kristal.Version.major == 0 then
+            ver_string = ver_string .. " (In-development)"
         end
 
         love.graphics.setFont(self.small_font)
